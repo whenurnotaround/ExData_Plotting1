@@ -14,6 +14,8 @@ plot4 <- function() {
   new_data$Voltage <- as.numeric(new_data$Voltage)
   new_data$Sub_metering_2 <- as.character(new_data$Sub_metering_2)
   new_data$Sub_metering_2 <- as.numeric(new_data$Sub_metering_2)
+  new_data$Sub_metering_1 <- as.character(new_data$Sub_metering_1)
+  new_data$Sub_metering_1 <- as.numeric(new_data$Sub_metering_1)
   
   par(mfrow = c(2, 2))
   with(data, {
@@ -22,7 +24,7 @@ plot4 <- function() {
     plot(new_data$Date, new_data$Sub_metering_1, xlab="", ylab="Energy sub metering", type = "l")
     lines(new_data$Date, new_data$Sub_metering_2, type="l", col="red")
     lines(new_data$Date, new_data$Sub_metering_3, type="l", col="blue")
-    legend("topright", border = "white", pch = 1, col = c("blue", "red", "green"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, bty = "n", text.width = 60000, lwd=2)
+    legend("topright", border = "white", col = c("blue", "red", "green"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, bty = "n", text.width = 60000, lwd=2)
     plot(new_data$Date, new_data$Global_reactive_power, xlab="datetime", ylab="Global_reactive_power", type = "l")
     
   })  

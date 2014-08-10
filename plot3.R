@@ -11,11 +11,13 @@ plot3 <- function(data) {
   new_data$Global_active_power <- as.numeric(new_data$Global_active_power)
   new_data$Sub_metering_2 <- as.character(new_data$Sub_metering_2)
   new_data$Sub_metering_2 <- as.numeric(new_data$Sub_metering_2)
+  new_data$Sub_metering_1 <- as.character(new_data$Sub_metering_1)
+  new_data$Sub_metering_1 <- as.numeric(new_data$Sub_metering_1)
   
   plot(new_data$Date, new_data$Sub_metering_1, xlab="", ylab="Energy sub metering", type = "l")
   lines(new_data$Date, new_data$Sub_metering_2, type="l", col="red")
   lines(new_data$Date, new_data$Sub_metering_3, type="l", col="blue")
-  legend("topright", pch = 1, col = c("blue", "red", "green"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, text.width = 60000) 
+  legend("topright", col = c("blue", "red", "green"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, text.width = 60000) 
   dev.copy(png, file = "./plot3.png") 
   dev.off() 
 }
